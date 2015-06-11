@@ -1,0 +1,7 @@
+//复制到spring-service.xml文件 Dwr Serivce配置区
+<bean id="dwrHealthIndicatorService" class="com.iseen.sysbase.web.controller.dwr.DwrHealthIndicatorService">
+    <dwr:remote javascript="dwrHealthIndicatorService"/>
+</bean>
+
+//复制到spring-service.xml文件 Service配置区
+<bean id="healthIndicatorService" class="com.iseen.sysbase.core.service.HealthIndicatorService"></bean>

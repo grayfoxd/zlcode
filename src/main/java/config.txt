@@ -1,0 +1,54 @@
+//复制到spring-service.xml文件 Dwr Base配置区
+<dwr:convert type="hibernate3" class="com.iseen.sysbase.core.pojo.IHealthIndicator"/>
+
+
+//复制到spring-service.xml文件 Dao配置区
+<bean id="iHealthIndicatorDaoImpl" class="com.iseen.sysbases.core.daoimpl.IHealthIndicatorDaoImpl"></bean>
+
+
+//复制到hbm.mysql.xml文件
+<class name="com.iseen.sysbase.core.pojo.IHealthIndicator" table="i_health_indicator" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="id" />
+    </id>
+    <property name="indicatorCode" type="java.lang.String">
+        <column name="indicator_code"/>
+    </property>
+    <property name="indicatorName" type="java.lang.String">
+        <column name="indicator_name"/>
+    </property>
+    <property name="gender" type="java.lang.Integer">
+        <column name="gender"/>
+    </property>
+    <property name="displaySequence" type="java.lang.Integer">
+        <column name="display_sequence"/>
+    </property>
+    <property name="retrieveCode" type="java.lang.String">
+        <column name="retrieve_code"/>
+    </property>
+    <property name="parentId" type="java.lang.String">
+        <column name="parent_id"/>
+    </property>
+    <property name="isLeaf" type="java.lang.String">
+        <column name="is_leaf"/>
+    </property>
+    <property name="firstOperator" type="java.lang.String">
+        <column name="first_operator"/>
+    </property>
+    <property name="firstOperatorTime" type="java.lang.String">
+        <column name="first_operator_time"/>
+    </property>
+    <property name="lastOperator" type="java.lang.String">
+        <column name="last_operator"/>
+    </property>
+    <property name="lastOperatorTime" type="java.lang.String">
+        <column name="last_operator_time"/>
+    </property>
+    <property name="memo" type="java.lang.String">
+        <column name="memo"/>
+    </property>
+    <property name="dr" type="java.lang.String">
+        <column name="dr"/>
+    </property>
+</class>
+

@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.directwebremoting.org/schema/spring-dwr
+	http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+
+
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+	<!--********************** *********************************** -->
+	<!--********************** Dwr Base配置区开始 *********************************** -->
+	<!--********************** *********************************** -->
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+
+	<dwr:configuration>
+		<dwr:convert type="exception" class="java.lang.Exception" />
+		<dwr:convert type="bean" class="java.lang.StackTraceElement" />
+
+		<dwr:convert type="bean" class="com.centling.common.module.ResultBean" />
+		<dwr:convert type="bean" class="com.centling.common.pages.Pager" />
+		<dwr:convert type="bean" class="com.centling.common.util.CalenderBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.util.WorkRecordBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.UserMethodsInfo" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ApproveProcessValueBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.OnlineHrmEmployeeBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.WorkRecordPageBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ApproveTypeCountBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.WorkRecordTempBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ProdcutProviderBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.SellWareHouseBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.SettlementDetailBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.SettlementBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.InComeOrOutRecordBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.CustomerStatisticsEmpcountBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.CustomerStatisticsDetailBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.CheckCustMaxCodeBean" />
+
+		<!-- 包装流程相关的实体类 -->
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ApproveProcessBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ProcessUserBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ProcessInstanceBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.TaskTodoBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.ProcessModelBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.HistoricProcessInstanceBean" />
+		<dwr:convert type="bean"
+			class="com.centling.common.module.HistoricTaskInstanceBean" />
+
+		<dwr:convert type="bean" class="com.centling.common.activiti.Variable" />
+
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaCarMaintain" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmWorkarea" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysCountry" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysProvince" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysDistrict" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysAttachmentInfo" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysMethodInfo" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysMethodHelp" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysCompanyMethods" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysMsg" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysHelp" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysLog" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysLogRuntime" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysError" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysException" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysUserInfo" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysColumnControl" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysImageInfo" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmPost" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmEmployee" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmDepartment" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmWorkrecord" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmContract" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmContractType" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysCompanyInfo" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysUserMethods" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysUserGroup" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysUserGroupDetail" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysRole" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysRoleDetail" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysRoleBind" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysLibraryInfo" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysLibraryStandard" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysUserView" />
+
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysConfig" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaWorkPlan" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaWarehouse" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaWareType" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaWaretypeRange" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNews" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaBoardroom" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaAnnouncement" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNotice" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaWorkLog" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaForms" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaAdversaria" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaMeetapply" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaJournalsType" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaJournals" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaSummary" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaCalender" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaCar" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaCarUse" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaCarApply" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaAlbum" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaPhoto" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaCarMainten" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaChatters" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaChatGroups" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaChatShare" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaGoods" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaGoodsBr" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaSmsSend" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaSmsInbox" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaBook" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaRegulations" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaBookBr" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaForums" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaPosts" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaMailInbox" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaMailSend" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaMailEmp" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaBookType" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaPostil" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaScheduleLog" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysApproveRecord" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysApproveSet" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysApproveSetDetail" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysApproveSetRange" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaVote" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaVoteOption" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaVoteStatus" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysWorksquad" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaRefisterout" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysParam" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.OaLeaveregistration">
+			<dwr:exclude method="historicProcessInstance,processDefinition" />
+		</dwr:convert>
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaTrsvel" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaOvevrtime" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysChecktime" />
+
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaTools" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNotebook" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNetdiskShare" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNetdiskConfig" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaDesktopSet" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.HrmTimedrecord" />
+
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNetmailSet" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNetmailPerson" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.OaNetmailSendbox" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNetmailInbox" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaNetmailUid" />
+
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.FinPaymentsOut" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.FinCashInfo" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.FinItemInfo" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.FinPaymentsIncome" />
+
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.FinAccountDetail" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.FinBankInit" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.FinBankInfo" />
+
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.OaProjectArchive" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaProjectPlan" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaProjectPostil" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaProjectPro" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaProjectProMx" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.OaProjectProTemp" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.OaProjectProTempMx" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.OaProjectRealproTemp" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.OaProjectType" />
+
+
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity">
+			<dwr:include
+				method="id,deploymentId,name,key,version,resourceName,diagramResourceName,suspensionState" />
+		</dwr:convert>
+
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.DeploymentEntity">
+			<dwr:include method="id,name,category,deploymentTime" />
+		</dwr:convert>
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.ModelEntity">
+			<dwr:include
+				method="id,revision,name,key,category,createTime,lastUpdateTime,version,metaInfo,deploymentId,editorSourceValueId,editorSourceExtraValueId" />
+		</dwr:convert>
+
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.GroupEntity" />
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.UserEntity" />
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.MembershipEntity" />
+
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.ExecutionEntity">
+			<dwr:include
+				method="id,processInstanceId,businessKey,processDefinitionId,suspensionState,activityId" />
+		</dwr:convert>
+
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.TaskEntity">
+			<dwr:include
+				method="id,revision,owner,assignee,parentTaskId,name,description,createTime,dueDate,suspensionState,executionId,processInstanceId,dueDate,taskDefinitionKey,eventName" />
+		</dwr:convert>
+
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.HistoricProcessInstanceEntity" />
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.HistoricTaskInstanceEntity" />
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.HistoricActivityInstanceEntity" />
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.HistoricVariableInstanceEntity" />
+		<dwr:convert type="hibernate3"
+			class="org.activiti.engine.impl.persistence.entity.CommentEntity">
+			<dwr:include method="fullMessage" />
+		</dwr:convert>
+
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysMethodShortcut" />
+		<dwr:convert type="hibernate3"
+			class="com.centling.core.pojo.SysProcessConfig" />
+		<dwr:convert type="hibernate3" class="com.centling.core.pojo.SysProcessType" />
+		<!-- 颐生基础设置 -->
+		<dwr:convert type="hibernate3"
+			class="com.iseen.sysbase.core.pojo.IPhyDisease" />
+		<dwr:convert type="hibernate3" class="com.iseen.sysbase.core.pojo.IPhyAdvise" />
+		<dwr:convert type="hibernate3" class="com.iseen.sysbase.core.pojo.ISysCompay" />
+		<dwr:convert type="hibernate3" class="com.iseen.sysbase.core.pojo.IPhyItem" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.sysbase.core.pojo.IHealthIndicator" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.sysbase.core.pojo.IDiseaseLevel" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.sysbase.core.pojo.IPhyPackage" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.sysbase.core.pojo.IPhyPackageDetail" />
+
+
+		<!-- 会员管理部分开始 -->
+		<!-- 会员信息部分 -->
+		<dwr:convert type="hibernate3" class="com.iseen.member.core.pojo.IMember" />
+		<dwr:convert type="hibernate3" class="com.iseen.member.core.pojo.IContract" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.IContractType" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.ITypeService" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.IServicePackage" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.IServiceDetail" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.IServiceInfo" />
+
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.IMemberConsumption" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.member.core.pojo.IMemberAppointment" />
+		<dwr:convert type="hibernate3" class="com.iseen.member.core.pojo.IServiceLog" />
+
+		<!-- 会员管理部分结束 -->
+		<!-- 档案管理部分开始 -->
+		<dwr:convert type="hibernate3" class="com.iseen.archives.core.pojo.IArchives" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.archives.core.pojo.IArchivesDisease" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.archives.core.pojo.IArchivesDrugallergy" />
+		<dwr:convert type="hibernate3"
+			class="com.iseen.archives.core.pojo.IArchivesMedicalrecord" />
+		<!-- 档案管理部分结束 -->
+	</dwr:configuration>
+
+	<!--************************************************************************************ -->
+	<!--********************** Dwr Base配置区结束 *********************************** -->
+	<!--************************************************************************************ -->
+
+
+
+
+
+
+
+
+
+
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+	<!--********************** *********************************** -->
+	<!--********************** Dwr Serivce配置区开始 *********************************** -->
+	<!--********************** *********************************** -->
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+
+	<bean id="dwrHrmEmployeeService" class="com.centling.web.controller.dwr.DwrHrmEmployeeService">
+		<dwr:remote javascript="dwrHrmEmployeeService" />
+	</bean>
+	<bean id="dwrHrmContractService" class="com.centling.web.controller.dwr.DwrHrmContractService">
+		<dwr:remote javascript="dwrHrmContractService"></dwr:remote>
+	</bean>
+	<bean id="dwrSysProcessService" class="com.centling.web.controller.dwr.DwrSysProcessService">
+		<dwr:remote javascript="dwrSysProcessService" />
+	</bean>
+	<bean id="dwrCommonService" class="com.centling.web.controller.dwr.DwrCommonService">
+		<dwr:remote javascript="dwrCommonService" />
+	</bean>
+	<bean id="dwrWorkArrangeService" class="com.centling.web.controller.dwr.DwrWorkArrangeService">
+		<dwr:remote javascript="dwrWorkArrangeService" />
+	</bean>
+	<bean id="dwrOACompanyResourcesService"
+		class="com.centling.web.controller.dwr.DwrOACompanyResourcesService">
+		<dwr:remote javascript="dwrOACompanyResourcesService" />
+	</bean>
+	<bean id="dwrOaNewsService" class="com.centling.web.controller.dwr.DwrOaNewsService">
+		<dwr:remote javascript="dwrOaNewsService" />
+	</bean>
+	<bean id="dwrOfficeResourcesService"
+		class="com.centling.web.controller.dwr.DwrOfficeResourcesService">
+		<dwr:remote javascript="dwrOfficeResourcesService" />
+	</bean>
+	<bean id="dwrOaCommunicationService"
+		class="com.centling.web.controller.dwr.DwrOaCommunicationService">
+		<dwr:remote javascript="dwrOaCommunicationService" />
+	</bean>
+	<bean id="dwrMoblieSmsService" class="com.centling.web.controller.dwr.DwrMoblieSmsService">
+		<dwr:remote javascript="dwrMoblieSmsService" />
+	</bean>
+	<bean id="dwrMailService" class="com.centling.web.controller.dwr.DwrMailService">
+		<dwr:remote javascript="dwrMailService" />
+	</bean>
+	<bean id="dwrApproveProcessService"
+		class="com.centling.web.controller.dwr.DwrApproveProcessService">
+		<dwr:remote javascript="dwrApproveProcessService" />
+	</bean>
+	<bean id="dwrPersonalOfficeService"
+		class="com.centling.web.controller.dwr.DwrPersonalOfficeService">
+		<dwr:remote javascript="dwrPersonalOfficeService" />
+	</bean>
+	<bean id="dwrPersonalProcessService"
+		class="com.centling.web.controller.dwr.DwrPersonalProcessService">
+		<dwr:remote javascript="dwrPersonalProcessService" />
+	</bean>
+	<bean id="dwrOADesktopService" class="com.centling.web.controller.dwr.DwrOADesktopService">
+		<dwr:remote javascript="dwrOADesktopService" />
+	</bean>
+	<bean id="dwrNetdiskService" class="com.centling.web.controller.dwr.DwrNetdiskService">
+		<dwr:remote javascript="dwrNetdiskService" />
+	</bean>
+
+	<!-- 颐生基础设置 -->
+	<bean id="dwrDiseaseService" class="com.iseen.sysbase.web.controller.dwr.DwrDiseaseService">
+		<dwr:remote javascript="dwrDiseaseService" />
+	</bean>
+	<bean id="dwrAdviseService" class="com.iseen.sysbase.web.controller.dwr.DwrAdviseService">
+		<dwr:remote javascript="dwrAdviseService" />
+	</bean>
+	<bean id="dwrsyscompanyService"
+		class="com.iseen.sysbase.web.controller.dwr.DwrsyscompanyService">
+		<dwr:remote javascript="dwrsyscompanyService" />
+	</bean>
+	<bean id="dwrPhyItemService" class="com.iseen.sysbase.web.controller.dwr.DwrPhyItemService">
+		<dwr:remote javascript="dwrPhyItemService" />
+	</bean>
+	<bean id="dwrHealthIndicatorService"
+		class="com.iseen.sysbase.web.controller.dwr.DwrHealthIndicatorService">
+		<dwr:remote javascript="dwrHealthIndicatorService" />
+	</bean>
+	<bean id="dwrDiseaseLevelService"
+		class="com.iseen.sysbase.web.controller.dwr.DwrDiseaseLevelService">
+		<dwr:remote javascript="dwrDiseaseLevelService" />
+	</bean>
+	<bean id="dwrPhyPackageService"
+		class="com.iseen.sysbase.web.controller.dwr.DwrPhyPackageService">
+		<dwr:remote javascript="dwrPhyPackageService" />
+	</bean>
+	<bean id="dwrPhyPackageDetailService"
+		class="com.iseen.sysbase.web.controller.dwr.DwrPhyPackageDetailService">
+		<dwr:remote javascript="dwrPhyPackageDetailService" />
+	</bean>
+
+
+	<!-- 会员管理开始 -->
+	<bean id="dwrContractService" class="com.iseen.member.web.controller.dwr.DwrContractService">
+		<dwr:remote javascript="dwrContractService" />
+	</bean>
+	<bean id="dwrContracttypeService"
+		class="com.iseen.member.web.controller.dwr.DwrContracttypeService">
+		<dwr:remote javascript="dwrContracttypeService" />
+	</bean>
+	<bean id="dwrService_infoService"
+		class="com.iseen.member.web.controller.dwr.DwrService_infoService">
+		<dwr:remote javascript="dwrService_infoService" />
+	</bean>
+	<bean id="dwrServicepackageService"
+		class="com.iseen.member.web.controller.dwr.DwrServicepackageService">
+		<dwr:remote javascript="dwrServicepackageService" />
+	</bean>
+
+	<bean id="dwrserviceInfoService"
+		class="com.iseen.member.web.controller.dwr.DwrserviceInfoService">
+		<dwr:remote javascript="dwrserviceInfoService" />
+	</bean>
+
+	<bean id="dwrI_memberService" class="com.iseen.member.web.controller.dwr.DwrI_memberService">
+		<dwr:remote javascript="dwrI_memberService" />
+	</bean>
+
+
+	<!-- 会员管理结束 -->
+	<!-- 档案管理部分开始 -->
+	<!-- 会员档案首页 -->
+	<bean id="dwrIarchivesstartService"
+		class="com.iseen.archives.web.controller.dwr.DwrIarchivesstartService">
+		<dwr:remote javascript="dwrIarchivesstartService" />
+	</bean>
+
+	<!-- 会员档案录入 -->
+	<bean id="dwrIarchivesService"
+		class="com.iseen.archives.web.controller.dwr.DwrIarchivesService">
+		<dwr:remote javascript="dwrIarchivesService" />
+	</bean>
+
+	<!-- 会员病历录入 -->
+	<bean id="dwri_archives_medicalrecordService"
+		class="com.iseen.archives.web.controller.dwr.Dwri_archives_medicalrecordService">
+		<dwr:remote javascript="dwri_archives_medicalrecordService" />
+	</bean>
+
+	<!-- 档案管理部分结束 -->
+
+
+	<!--************************************************************************************ -->
+	<!--********************** Dwr Serivce配置区结束 *********************************** -->
+	<!--************************************************************************************ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+	<!--********************** *********************************** -->
+	<!--********************** Service配置区开始 *********************************** -->
+	<!--********************** *********************************** -->
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+	<bean id="fileService" class="com.centling.common.netdisk.action.FileService"></bean>
+	<bean id="oaDesktopService" class="com.centling.core.service.OaDesktopSerivce"></bean>
+	<bean id="userLoginService" class="com.centling.core.service.UserLoginService"></bean>
+	<bean id="hrmEmployeeService" class="com.centling.core.service.HrmEmployeeService"></bean>
+	<bean id="hrmContractService" class="com.centling.core.service.HrmContractService"></bean>
+	<bean id="sysProcessService" class="com.centling.core.service.SysProcessService"></bean>
+	<bean id="oaCompanyResourcesService" class="com.centling.core.service.OaCompanyResourcesService"></bean>
+	<bean id="fileProcessService" class="com.centling.core.service.FileProcessService"></bean>
+	<bean id="workArrangeService" class="com.centling.core.service.WorkArrangeService"></bean>
+	<bean id="oaNewsService" class="com.centling.core.service.OaNewsService"></bean>
+	<bean id="officeResourcesService" class="com.centling.core.service.OfficeResourcesService"></bean>
+	<bean id="oaChartterService" class="com.centling.core.service.OaChartterService"></bean>
+	<bean id="moblieSmsService" class="com.centling.core.service.MoblieSmsService"></bean>
+	<bean id="mailService" class="com.centling.core.service.MailService"></bean>
+	<bean id="approveProcessService" class="com.centling.core.service.ApproveProcessService"></bean>
+	<bean id="personalOfficeSerivce" class="com.centling.core.service.PersonalOfficeSerivce"></bean>
+	<bean id="netdiskService" class="com.centling.core.service.NetdiskService"></bean>
+
+	<!-- 颐生基础设置 -->
+	<bean id="diseaseService" class="com.iseen.sysbase.core.service.DiseaseService"></bean>
+	<bean id="adviseService" class="com.iseen.sysbase.core.service.AdviseService"></bean>
+	<bean id="syscompanyService" class="com.iseen.sysbase.core.service.syscompanyService"></bean>
+	<bean id="phyItemService" class="com.iseen.sysbase.core.service.PhyItemService"></bean>
+	<bean id="healthIndicatorService" class="com.iseen.sysbase.core.service.HealthIndicatorService"></bean>
+	<bean id="diseaseLevelService" class="com.iseen.sysbase.core.service.DiseaseLevelService"></bean>
+	<bean id="phyPackageService" class="com.iseen.sysbase.core.service.PhyPackageService"></bean>
+	<bean id="phyPackageDetailService" class="com.iseen.sysbase.core.service.PhyPackageDetailService"></bean>
+
+	<!-- 会员管理开始 -->
+	<bean id="contractService" class="com.iseen.member.core.service.ContractService"></bean>
+	<bean id="contracttypeService" class="com.iseen.member.core.service.ContracttypeService"></bean>
+	<bean id="service_infoService" class="com.iseen.member.core.service.Service_infoService"></bean>
+	<bean id="servicepackageService" class="com.iseen.member.core.service.ServicepackageService"></bean>
+	<bean id="serviceInfoService" class="com.iseen.member.core.service.serviceInfoService"></bean>
+	<!-- 会员信息 -->
+	<bean id="i_memberService" class="com.iseen.member.core.service.I_memberService"></bean>
+	<!-- 会员管理结束 -->
+
+	<!-- 档案管理部分开始 -->
+	<bean id="iarchivesstartService" class="com.iseen.archives.core.service.IarchivesstartService"></bean>
+	<bean id="iarchivesService" class="com.iseen.archives.core.service.IarchivesService"></bean>
+
+	<bean id="i_archives_medicalrecordService"
+		class="com.iseen.archives.core.service.i_archives_medicalrecordService"></bean>
+	<!-- 档案管理部分结束 -->
+	<!--************************************************************************************ -->
+	<!--********************** Service配置区结束 *********************************** -->
+	<!--************************************************************************************ -->
+
+
+
+
+
+
+
+
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+	<!--********************** *********************************** -->
+	<!--********************** Dao配置区开始 *********************************** -->
+	<!--********************** *********************************** -->
+	<!--************************************************************************************ -->
+	<!--************************************************************************************ -->
+
+	<bean id="hrmWorkareaDaoImpl" class="com.centling.core.daoimpl.HrmWorkareaDaoImpl"></bean>
+	<bean id="sysCountryDaoImpl" class="com.centling.core.daoimpl.SysCountryDaoImpl"></bean>
+	<bean id="sysProvinceDaoImpl" class="com.centling.core.daoimpl.SysProvinceDaoImpl"></bean>
+	<bean id="sysDistrictDaoImpl" class="com.centling.core.daoimpl.SysDistrictDaoImpl"></bean>
+	<bean id="sysAttachmentInfoDaoImpl" class="com.centling.core.daoimpl.SysAttachmentInfoDaoImpl"></bean>
+	<bean id="sysMethodInfoDaoImpl" class="com.centling.core.daoimpl.SysMethodInfoDaoImpl"></bean>
+	<bean id="sysMethodHelpDaoImpl" class="com.centling.core.daoimpl.SysMethodHelpDaoImpl"></bean>
+	<bean id="sysCompanyMethodsDaoImpl" class="com.centling.core.daoimpl.SysCompanyMethodsDaoImpl"></bean>
+	<bean id="sysMsgDaoImpl" class="com.centling.core.daoimpl.SysMsgDaoImpl"></bean>
+	<bean id="sysHelpDaoImpl" class="com.centling.core.daoimpl.SysHelpDaoImpl"></bean>
+	<bean id="sysLogDaoImpl" class="com.centling.core.daoimpl.SysLogDaoImpl"></bean>
+	<bean id="sysLogRuntimeDaoImpl" class="com.centling.core.daoimpl.SysLogRuntimeDaoImpl"></bean>
+	<bean id="sysErrorDaoImpl" class="com.centling.core.daoimpl.SysErrorDaoImpl"></bean>
+	<bean id="sysExceptionDaoImpl" class="com.centling.core.daoimpl.SysExceptionDaoImpl"></bean>
+	<bean id="sysUserInfoDaoImpl" class="com.centling.core.daoimpl.SysUserInfoDaoImpl"></bean>
+	<bean id="sysColumnControlDaoImpl" class="com.centling.core.daoimpl.SysColumnControlDaoImpl"></bean>
+	<bean id="sysImageInfoDaoImpl" class="com.centling.core.daoimpl.SysImageInfoDaoImpl"></bean>
+	<bean id="hrmPostDaoImpl" class="com.centling.core.daoimpl.HrmPostDaoImpl"></bean>
+	<bean id="hrmEmployeeDaoImpl" class="com.centling.core.daoimpl.HrmEmployeeDaoImpl"></bean>
+	<bean id="sysCompanyInfoDaoImpl" class="com.centling.core.daoimpl.SysCompanyInfoDaoImpl"></bean>
+	<bean id="sysUserMethodsDaoImpl" class="com.centling.core.daoimpl.SysUserMethodsDaoImpl"></bean>
+	<bean id="sysUserGroupDaoImpl" class="com.centling.core.daoimpl.SysUserGroupDaoImpl"></bean>
+	<bean id="sysUserGroupDetailDaoImpl" class="com.centling.core.daoimpl.SysUserGroupDetailDaoImpl"></bean>
+	<bean id="sysRoleDaoImpl" class="com.centling.core.daoimpl.SysRoleDaoImpl"></bean>
+	<bean id="sysRoleDetailDaoImpl" class="com.centling.core.daoimpl.SysRoleDetailDaoImpl"></bean>
+	<bean id="sysRoleBindDaoImpl" class="com.centling.core.daoimpl.SysRoleBindDaoImpl"></bean>
+	<bean id="sysLibraryInfoDaoImpl" class="com.centling.core.daoimpl.SysLibraryInfoDaoImpl"></bean>
+	<bean id="sysLibraryStandardDaoImpl" class="com.centling.core.daoimpl.SysLibraryStandardDaoImpl"></bean>
+	<bean id="sysUserViewDaoImpl" class="com.centling.core.daoimpl.SysUserViewDaoImpl"></bean>
+	<bean id="hrmDepartmentDaoImpl" class="com.centling.core.daoimpl.HrmDepartmentDaoImpl"></bean>
+	<bean id="sysConfigDaoImpl" class="com.centling.core.daoimpl.SysConfigDaoImpl"></bean>
+	<bean id="oaWarehouseDaoImpl" class="com.centling.core.daoimpl.OaWarehouseDaoImpl"></bean>
+	<bean id="oaWareTypeDaoImpl" class="com.centling.core.daoimpl.OaWareTypeDaoImpl"></bean>
+	<bean id="oaWaretypeRangeDaoImpl" class="com.centling.core.daoimpl.OaWaretypeRangeDaoImpl"></bean>
+	<bean id="oaAnnouncementDaoImpl" class="com.centling.core.daoimpl.OaAnnouncementDaoImpl"></bean>
+	<bean id="oaBoardroomDaoImpl" class="com.centling.core.daoimpl.OaBoardroomDaoImpl"></bean>
+	<bean id="oaNoticeDaoImpl" class="com.centling.core.daoimpl.OaNoticeDaoImpl"></bean>
+	<bean id="oaWorkLogDaoImpl" class="com.centling.core.daoimpl.OaWorkLogDaoImpl"></bean>
+	<bean id="oaFormsDaoImpl" class="com.centling.core.daoimpl.OaFormsDaoImpl"></bean>
+	<bean id="oaAdversariaDaoImpl" class="com.centling.core.daoimpl.OaAdversariaDaoImpl"></bean>
+	<bean id="oaMeetapplyDaoImpl" class="com.centling.core.daoimpl.OaMeetapplyDaoImpl"></bean>
+	<bean id="oaSummaryDaoImpl" class="com.centling.core.daoimpl.OaSummaryDaoImpl"></bean>
+	<bean id="oaCarDaoImpl" class="com.centling.core.daoimpl.OaCarDaoImpl"></bean>
+	<bean id="oaJournalsTypeDaoImpl" class="com.centling.core.daoimpl.OaJournalsTypeDaoImpl"></bean>
+	<bean id="oaJournalsDaoImpl" class="com.centling.core.daoimpl.OaJournalsDaoImpl"></bean>
+	<bean id="oaCalenderDaoImpl" class="com.centling.core.daoimpl.OaCalenderDaoImpl"></bean>
+	<bean id="oaCarUseDaoImpl" class="com.centling.core.daoimpl.OaCarUseDaoImpl"></bean>
+	<bean id="oaCarMaintenDaoImpl" class="com.centling.core.daoimpl.OaCarMaintenDaoImpl"></bean>
+	<bean id="oaAlbumDaoImpl" class="com.centling.core.daoimpl.OaAlbumDaoImpl"></bean>
+	<bean id="oaPhotoDaoImpl" class="com.centling.core.daoimpl.OaPhotoDaoImpl"></bean>
+	<bean id="oaChattersDaoImpl" class="com.centling.core.daoimpl.OaChattersDaoImpl"></bean>
+	<bean id="oaChatGroupsDaoImpl" class="com.centling.core.daoimpl.OaChatGroupsDaoImpl"></bean>
+	<bean id="oaSmsSendDaoImpl" class="com.centling.core.daoimpl.OaSmsSendDaoImpl"></bean>
+	<bean id="oaSmsInboxDaoImpl" class="com.centling.core.daoimpl.OaSmsInboxDaoImpl"></bean>
+	<bean id="oaBookDaoImpl" class="com.centling.core.daoimpl.OaBookDaoImpl"></bean>
+	<bean id="oaRegulationsDaoImpl" class="com.centling.core.daoimpl.OaRegulationsDaoImpl"></bean>
+	<bean id="oaBookBrDaoImpl" class="com.centling.core.daoimpl.OaBookBrDaoImpl"></bean>
+	<bean id="oaForumsDaoImpl" class="com.centling.core.daoimpl.OaForumsDaoImpl"></bean>
+	<bean id="oaPostsDaoImpl" class="com.centling.core.daoimpl.OaPostsDaoImpl"></bean>
+	<bean id="oaMailInboxDaoImpl" class="com.centling.core.daoimpl.OaMailInboxDaoImpl"></bean>
+	<bean id="oaMailSendDaoImpl" class="com.centling.core.daoimpl.OaMailSendDaoImpl"></bean>
+	<bean id="oaMailEmpDaoImpl" class="com.centling.core.daoimpl.OaMailEmpDaoImpl"></bean>
+	<bean id="oaBookTypeDaoImpl" class="com.centling.core.daoimpl.OaBookTypeDaoImpl"></bean>
+	<bean id="oaVoteDaoImpl" class="com.centling.core.daoimpl.OaVoteDaoImpl"></bean>
+	<bean id="oaVoteOptionDaoImpl" class="com.centling.core.daoimpl.OaVoteOptionDaoImpl"></bean>
+	<bean id="oaVoteStatusDaoImpl" class="com.centling.core.daoimpl.OaVoteStatusDaoImpl"></bean>
+	<bean id="oaCarMaintainDaoImpl" class="com.centling.core.daoimpl.OaCarMaintainDaoImpl"></bean>
+	<bean id="oaCarApplyDaoImpl" class="com.centling.core.daoimpl.OaCarApplyDaoImpl"></bean>
+	<bean id="sysParamDaoImpl" class="com.centling.core.daoimpl.SysParamDaoImpl"></bean>
+	<bean id="oaLeaveregistrationDaoImpl" class="com.centling.core.daoimpl.OaLeaveregistrationDaoImpl"></bean>
+	<bean id="oaTrsvelDaoImpl" class="com.centling.core.daoimpl.OaTrsvelDaoImpl"></bean>
+	<bean id="oaToolsDaoImpl" class="com.centling.core.daoimpl.OaToolsDaoImpl"></bean>
+	<bean id="oaNetdiskShareDaoImpl" class="com.centling.core.daoimpl.OaNetdiskShareDaoImpl"></bean>
+	<bean id="oaNetdiskConfigDaoImpl" class="com.centling.core.daoimpl.OaNetdiskConfigDaoImpl"></bean>
+	<bean id="oaDesktopSetDaoImpl" class="com.centling.core.daoimpl.OaDesktopSetDaoImpl"></bean>
+	<bean id="oaNotebookDaoImpl" class="com.centling.core.daoimpl.OaNotebookDaoImpl"></bean>
+	<bean id="hrmTimedrecordDaoImpl" class="com.centling.core.daoimpl.HrmTimedrecordDaoImpl"></bean>
+	<bean id="oaNetmailSetDaoImpl" class="com.centling.core.daoimpl.OaNetmailSetDaoImpl"></bean>
+	<bean id="oaNetmailPersonDaoImpl" class="com.centling.core.daoimpl.OaNetmailPersonDaoImpl"></bean>
+	<bean id="oaNetmailSendboxDaoImpl" class="com.centling.core.daoimpl.OaNetmailSendboxDaoImpl"></bean>
+	<bean id="oaNetmailInboxDaoImpl" class="com.centling.core.daoimpl.OaNetmailInboxDaoImpl"></bean>
+	<bean id="oaNetmailUidDaoImpl" class="com.centling.core.daoimpl.OaNetmailUidDaoImpl"></bean>
+	<bean id="sysMethodShortcutDaoImpl" class="com.centling.core.daoimpl.SysMethodShortcutDaoImpl"></bean>
+	<bean id="hrmContractDaoImpl" class="com.centling.core.daoimpl.HrmContractDaoImpl"></bean>
+	<bean id="hrmContractTypeDaoImpl" class="com.centling.core.daoimpl.HrmContractTypeDaoImpl"></bean>
+	<bean id="sysProcessConfigDaoImpl" class="com.centling.core.daoimpl.SysProcessConfigDaoImpl"></bean>
+	<bean id="sysProcessTypeDaoImpl" class="com.centling.core.daoimpl.SysProcessTypeDaoImpl"></bean>
+
+	<!-- 颐生基础设置开始 -->
+	<bean id="iPhyDiseaseDaoImpl" class="com.iseen.sysbase.core.daoimpl.IPhyDiseaseDaoImpl"></bean>
+	<bean id="iPhyAdviseDaoImpl" class="com.iseen.sysbase.core.daoimpl.IPhyAdviseDaoImpl"></bean>
+	<bean id="iSysCompayDaoImpl" class="com.iseen.sysbase.core.daoimpl.ISysCompayDaoImpl"></bean>
+	<bean id="iPhyItemDaoImpl" class="com.iseen.sysbase.core.daoimpl.IPhyItemDaoImpl"></bean>
+	<bean id="iHealthIndicatorDaoImpl" class="com.iseen.sysbase.core.daoimpl.IHealthIndicatorDaoImpl"></bean>
+	<bean id="iDiseaseLevelDaoImpl" class="com.iseen.sysbase.core.daoimpl.IDiseaseLevelDaoImpl"></bean>
+	<bean id="iPhyPackageDaoImpl" class="com.iseen.sysbase.core.daoimpl.IPhyPackageDaoImpl"></bean>
+	<bean id="iPhyPackageDetailDaoImpl" class="com.iseen.sysbase.core.daoimpl.IPhyPackageDetailDaoImpl"></bean>
+	<!-- 颐生基础设置结束 -->
+
+	<!-- 会员管理部分开始 -->
+	<bean id="iContractDaoImpl" class="com.iseen.member.core.daoimpl.IContractDaoImpl"></bean>
+	<bean id="iContractTypeDaoImpl" class="com.iseen.member.core.daoimpl.IContractTypeDaoImpl"></bean>
+	<bean id="iTypeServiceDaoImpl" class="com.iseen.member.core.daoimpl.ITypeServiceDaoImpl"></bean>
+	<bean id="iServicePackageDaoImpl" class="com.iseen.member.core.daoimpl.IServicePackageDaoImpl"></bean>
+	<bean id="iServiceDetailDaoImpl" class="com.iseen.member.core.daoimpl.IServiceDetailDaoImpl"></bean>
+	<bean id="iServiceInfoDaoImpl" class="com.iseen.member.core.daoimpl.IServiceInfoDaoImpl"></bean>
+	<bean id="iMemberConsumptionDaoImpl" class="com.iseen.member.core.daoimpl.IMemberConsumptionDaoImpl"></bean>
+	<bean id="iMemberAppointmentDaoImpl" class="com.iseen.member.core.daoimpl.IMemberAppointmentDaoImpl"></bean>
+	<bean id="iServiceLogDaoImpl" class="com.iseen.member.core.daoimpl.IServiceLogDaoImpl"></bean>
+	<!-- 会员信息 -->
+	<bean id="iMemberDaoImpl" class="com.iseen.member.core.daoimpl.IMemberDaoImpl"></bean>
+
+
+
+	<!-- 会员管理部分结束 -->
+
+
+	<!--档案管理部分开始 -->
+	<bean id="iArchivesDaoImpl" class="com.iseen.archives.core.daoimpl.IArchivesDaoImpl"></bean>
+
+	<bean id="iArchivesDiseaseDaoImpl" class="com.iseen.archives.core.daoimpl.IArchivesDiseaseDaoImpl"></bean>
+
+	<bean id="iArchivesDrugallergyDaoImpl"
+		class="com.iseen.archives.core.daoimpl.IArchivesDrugallergyDaoImpl"></bean>
+
+
+	<bean id="iArchivesMedicalrecordDaoImpl"
+		class="com.iseen.archives.core.daoimpl.IArchivesMedicalrecordDaoImpl"></bean>
+
+
+	<!-- 档案管理部分结束 -->
+	<!--************************************************************************************ -->
+	<!--********************** Dao配置区结束 *********************************** -->
+	<!--************************************************************************************ -->
+
+
+	<!-- 拦截机制配置 -->
+
+	<!-- 方法拦截 -->
+	<bean id="simpleAdvice" class="com.centling.web.filter.springaop.SimpleAdvice" />
+
+	<!-- 异常捕捉 -->
+	<bean id="exceptionCatcherAdvice"
+		class="com.centling.web.filter.springaop.ExceptionCatcherAdvice">
+		<property name="sysExceptionDao" ref="sysExceptionDaoImpl"></property>
+	</bean>
+
+	<!-- 拦截配置开始 使用BeanNameAutoProxyCreator -->
+	<!-- <bean id="simpleBeanProxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"> 
+		<property name="beanNames"> <list> <value>dwr*Service</value> </list> </property> 
+		<property name="interceptorNames"> <list> <value>simpleAdvice</value> <value>exceptionCatcherAdvice</value> 
+		</list> </property> </bean> -->
+	<!-- 拦截配置结束 -->
+
+</beans>

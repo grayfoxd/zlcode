@@ -1,0 +1,7 @@
+//复制到spring-service.xml文件 Dwr Serivce配置区
+<bean id="dwrPhyItemService" class="com.iseen.sysbase.web.controller.dwr.DwrPhyItemService">
+    <dwr:remote javascript="dwrPhyItemService"/>
+</bean>
+
+//复制到spring-service.xml文件 Service配置区
+<bean id="phyItemService" class="com.iseen.sysbase.core.service.PhyItemService"></bean>
